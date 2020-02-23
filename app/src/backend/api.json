@@ -1,5 +1,13 @@
 {
   "component1": {
-    "logic": "more logic"
+    "logic": "am logic"
+  },
+
+  "component2": {
+    "logic": "big logic"
+  },
+
+  "component3": {
+    "logic": "yay logic"
   }
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Dummy() {
+function Dummy(props) {
   return (
     <div className="dummy">
-      <h1> Henlo (OvO")</h1>
+      <h1>{props.name}</h1>
     </div>
   );
 }
