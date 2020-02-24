@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Dummy from './components/dummy';
 
 const compoo = require('./backend/api.json');
 
 function App() {
   const [dumb, renderDummy] = useState([]);
-  const [newDumb, addNewDumb] = useState({ name: '' });
-  // const [dumbName, bigDumb] = useState();
+  const [newDumb, addNewDumb] = useState({ name: '', link: '' });
 
   // Components should be fully modular - therefor they should be able to be picked on which is loaded
   // Treat them like users? Pick component, find component in API, pull component, apply logic
@@ -17,7 +16,11 @@ function App() {
   function newCompoo(bigcompoo) {
     let value = compoo[bigcompoo];
     newDumb.name = value.logic;
-    renderDummy([...dumb, newDumb.name]);
+    newDumb.link = value.link;
+    addNewDumb({ name: value.logic, link: value.link });
+    renderDummy([...dumb, newDumb]);
+
+    console.log(dumb);
   }
 
   return (
@@ -38,7 +41,11 @@ function App() {
       {/* Return should return a wrapper that has an href, dummy logic is pulled? */}
       <div className="modular-wrapper">
         {dumb.map((title, i) => {
-          return <Dummy name={title} key={i} />;
+          return (
+            <a href={title.link} key={i} className="dumb-wrap">
+              <Dummy name={title.name} key={i} />
+            </a>
+          );
         })}
       </div>
     </div>

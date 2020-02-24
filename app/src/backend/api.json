@@ -1,13 +1,16 @@
 {
   "component1": {
-    "logic": "am logic"
+    "logic": "am logic",
+    "link": "/comp1"
   },
 
   "component2": {
-    "logic": "big logic"
+    "logic": "big logic",
+    "link": "/comp2"
   },
 
   "component3": {
-    "logic": "yay logic"
+    "logic": "yay logic",
+    "link": "/comp3"
   }
 }
